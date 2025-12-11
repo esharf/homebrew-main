@@ -1,11 +1,11 @@
 ## installation
 
 ```bash
-brew tap esharf/homebrew
+brew tap esharf/main
 ```
 
 ## To use aws convetor
 ```bash
 brew install aws-url-copy-tool
-brew services start esharf/homebrew/aws-url-copy-tool
+brew services start esharf/main/aws-url-copy-tool
 ```
