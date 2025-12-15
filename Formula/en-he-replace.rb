@@ -1,9 +1,9 @@
-class AwsUrlCopyTool < Formula
-  desc "Auto-modify macOS clipboard for AWS URLs"
+class EnHeReplace < Formula
+  desc "Replace English text with Hebrew equivalents on macOS"
   homepage "https://github.com/esharf/en-he-replace"
-  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.5/en-he-replace-macos.zip"
-  sha256 "250c0ab5c57d38507fbd5e92b3d90537cd1bdff2f7f9287ddd6a925d1d6a205d"
-  version "0.0.5"
+  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.6/en-he-replace-macos.zip"
+  sha256 "64111d9ef29c5479eb9f073c493f6bb80017e5fd1a939f54ff4902a58f695460"
+  version "0.0.6"
 
   def install
     bin.install "en-he-replace"
