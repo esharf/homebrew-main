@@ -1,13 +1,13 @@
 class EnHeReplace < Formula
   desc "Replace English text with Hebrew equivalents on macOS"
   homepage "https://github.com/esharf/en-he-replace"
-  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.9/en-he-replace-macos.zip"
-  sha256 "d6b40c0888575276fe08b1e863c8d3ced12f2f76d8a68a81a29463625de77041"
-  version "0.0.9"
+  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.10/en-he-replace-macos.zip"
+  sha256 "fd23001efa14ba40e7892953b20f4f3c110abf192f0f334df0cbf832b395087b"
+  version "0.0.10"
 
   def install
     bin.install "en-he-replace"
-    libexec.install "resources/en<->he.workflow"
+    libexec.install "resources"
   end
 
   def post_install
