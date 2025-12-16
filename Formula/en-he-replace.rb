@@ -1,22 +1,29 @@
 class EnHeReplace < Formula
   desc "Replace English text with Hebrew equivalents on macOS"
   homepage "https://github.com/esharf/en-he-replace"
-  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.7/en-he-replace-macos.zip"
-  sha256 "228015d31299083b4633f3f97ce1ded0e96c189993ca40f3d0a69901e20e3057"
-  version "0.0.7"
+  url "https://github.com/esharf/en-he-replace/releases/download/v0.0.8/en-he-replace-macos.zip"
+  sha256 "6f1a317eab33207c56e6a0e33fe8ce36d749d09616e7ea154f025c074ee030cb"
+  version "0.0.8"
 
   def install
     bin.install "en-he-replace"
     pkgshare.install "resources/en<->he.workflow"
   end
 
+  def post_install
+    services_dir = File.expand_path("~/Library/Services")
+    mkdir_p services_dir unless Dir.exist?(services_dir)
+    cp_r pkgshare/"resources/en<->he.workflow", services_dir
+  end
+
   def caveats
     <<~EOS
-      To enable the included Automator service, copy the workflow to your Services folder:
+      To uninstall completely, run:
 
-        cp -R "#{pkgshare}/resources/en<->he.workflow" "~/Library/Services/"
+        rm -rf ~/Library/Services/en\\<-\\>he.workflow
 
-      After copying, the service will be available in the Services menu.
+      Then refresh Services if needed:
+        killall -u "$USER" pbs
     EOS
   end
 end
