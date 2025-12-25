@@ -7,14 +7,14 @@ class EnHeReplace < Formula
 
   def install
     bin.install "en-he-replace"
-    pkgshare.install "resources"
+    pkgshare.install "resources/en<->he.workflow"
   end
 
   def caveats
     <<~EOS
       This formula installs the en-he-replace macOS Service.
       To enable it, copy the workflow to your Services folder:
-        cp -R #{pkgshare}/en-he-replace.workflow ~/Library/Services/
+        cp -R #{pkgshare}/en\\<-\\>he.workflow ~/Library/Services/
 
       To uninstall completely, run:
 
